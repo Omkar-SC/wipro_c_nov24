@@ -1,0 +1,99 @@
+ASSIGNMENTS:
+
+1. Add the prototypes of the I/P functions which the trainer gave on day1.
+2.
+
+p14
+Check if a number is perfect square
+p15
+Check if a character is an alphabet
+p16
+Check if a character is an alphanumeric
+p17
+Check if a character is a digit
+p18
+Check if a letter is small case
+p19
+Check if a year is Leap year
+p20
+Declare 3 character variables and accept values, raining=r sunny=s cloudy=c
+Allow the person to go out only if it is:
+	1. only sunny
+	2. sunny and raining
+-------------------------------------------------------------
+p29  FARMER PROBLEM STATEMENT
+
+Mahesh is a farmer and owns 80 acres of land. His land is equally divided into 5 segments. He grows tomatoes in the 1st segment, potatoes in the 2nd segment, cabbage in the 3rd segment, sunflower in the 4th segment and sugarcane in the 5th segment.
+He is converting his land from chemical-driven farming to chemical-free farming. Mahesh starts with the conversion of vegetables into chemical-free produce. He spends the first 6 months doing the same.
+He then converts the sunflower land bank into chemical-free farming. This takes him another 4 months. Finally, he converts sugarcane into chemical-free farming over the next 4 months.
+He gets a yield of the following for tomatoes. 30% of his tomato land gives him 10 tonne yield per acre.
+The remaining 70% of his tomato land gives him 12 tonnes yield per acre. The selling price of tomato is Rs. 7 per Kg.
+The yield of potatoes is 10 tonnes per acre. He sells each kg at Rs. 20.
+The yield of cabbage is 14 tonnes per acre. He sells each kg at Rs. 24.
+The yield of sunflowers is 0.7 tonnes per acre. He sells each kg at Rs. 200.
+The yield of sugarcane is 45 tonnes per acre. He sells each tonne at Rs. 4,000.
+All the crops are sowed at the same time. Mahesh gets the above yield at the above-mentioned rate in one crop cycle across his entire land of 80 acres.
+What is
+a. The overall sales achieved by Mahesh from the 80 acres of land.
+b. Sales realisation from chemical-free farming at the end of 11 months?
+
+total_land = 80
+no_of_segments = 5
+each_segment = total_land // no_of_segments
+ 
+tamoto_yield_tonnes = (each_segment * 0.3 * 10) + (each_segment * 0.7 *12)
+tomato_sales_amount = int(tamoto_yield_tonnes * 1000 * 7)
+ 
+potato_yeild_tonnes = each_segment * 10
+potato_sales_amount = potato_yeild_tonnes * 1000 * 20
+ 
+cabbage_yeild_tonnes = each_segment * 14
+cabbage_sales_amount = cabbage_yeild_tonnes * 1000 * 24
+ 
+sunflower_yeild_tonnes = each_segment * 0.7
+sunflower_sales_amount = int(sunflower_yeild_tonnes * 1000 * 200)
+ 
+sugarcane_yeild_tonnes = each_segment * 45
+sugarcane_sales_amount = sugarcane_yeild_tonnes * 4000
+ 
+total_sales_amount = tomato_sales_amount + potato_sales_amount + sunflower_sales_amount + sugarcane_sales_amount
+
+
+
+
+O(n2) Problems:
+1. Find Nth Prime number
+2. Print the Prime numbers between M and N in decreasing order (N>M)
+3. Find Nth term of the series: 1 2 2 3 3 5 5 7 8 11 13 13
+4. Print the following shapes of N lines made up of Stars
+A) Right Angled Triangle
+B) Pyramid (Equilateral Triangle)
+C) Hollow Square
+D) X Shape
+E) X shape inside Hollow Square
+F) Hollow Rhombus
+G) Hexagon (Benzene Ring C6H6)
+
+Pascal Triangle
+
+----------------------------------------------------------------------
+1. Find smallest and biggest element in an Array (Linear Search)
+Discuss best case and worst case efficiencies of Sequential search
+2. Remove duplicates from an Array
+3. Print the number of occurances of each element in an Array.
+4. Sort the Array elements using Bubble Sort. Discuss its efficiency and optimize the algorithm.
+
+----------------------------------------------------------------------
+1. Find the number of palindromes in a given sentence. Must use library functions.
+2. Impliment strip() function (Go remove leading and trailing spaces and tabs) without using library functions.
+3. Implement stricmp() and strncpy() and strstr() and strtok()
+
+----------------------------------------------------------------------
+PROBLEMS:
+1. Implement Stack using Singly LL
+2. Implement Queue using Singly LL
+3. Implement Circular Queue using Doubly LL
+4. Reverse a Singly LL using Recursion
+5. Reverse a Singly LL using Loop
+6. Merge 2 Sorted Singly LL (Merged List must also be sorted)
+7. Add new node at given position. Remove a specific element from a List
