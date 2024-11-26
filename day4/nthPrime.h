@@ -1,0 +1,1 @@
+int checkNthPrime(int number);
