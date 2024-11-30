@@ -62,29 +62,28 @@ total_sales_amount = tomato_sales_amount + potato_sales_amount + sunflower_sales
 
 
 O(n2) Problems:
-1. Find Nth Prime number
+1. Find Nth Prime number //done
 2. Print the Prime numbers between M and N in decreasing order (N>M)
 3. Find Nth term of the series: 1 2 2 3 3 5 5 7 8 11 13 13
 4. Print the following shapes of N lines made up of Stars
-A) Right Angled Triangle
-B) Pyramid (Equilateral Triangle)
-C) Hollow Square
-D) X Shape
-E) X shape inside Hollow Square
+A) Right Angled Triangle	//done
+B) Pyramid (Equilateral Triangle) //done
+C) Hollow Square //done
+D) X Shape //done
+E) X shape inside Hollow Square //done
 F) Hollow Rhombus
 G) Hexagon (Benzene Ring C6H6)
-
-Pascal Triangle
+7) Pascal Triangle
 
 ----------------------------------------------------------------------
 1. Find smallest and biggest element in an Array (Linear Search)
-Discuss best case and worst case efficiencies of Sequential search
+Discuss best case and worst case efficiencies of Sequential search //done
 2. Remove duplicates from an Array
-3. Print the number of occurances of each element in an Array.
+3. Print the number of occurances of each element in an Array. // done
 4. Sort the Array elements using Bubble Sort. Discuss its efficiency and optimize the algorithm.
 
 ----------------------------------------------------------------------
-1. Find the number of palindromes in a given sentence. Must use library functions.
+1. Find the number of palindromes in a given sentence. Must use library functions. 
 2. Impliment strip() function (Go remove leading and trailing spaces and tabs) without using library functions.
 3. Implement stricmp() and strncpy() and strstr() and strtok()
 
@@ -97,3 +96,15 @@ PROBLEMS:
 5. Reverse a Singly LL using Loop
 6. Merge 2 Sorted Singly LL (Merged List must also be sorted)
 7. Add new node at given position. Remove a specific element from a List
+
+PROBLEMS ON RECURSIVE FUNCTIONS:
+1. Find factorial of a number using recursion. (Bad Idea) //done
+2. Find sum of digits of a number  //done
+3. Find smallest number in an array of size N 
+4. Print the Fibo series of N terms (1st 2 terms are 1 and 2)
+
+---------------------------------------------------
+Find sum of 2 matrices //done
+Find the transpose of a matrix
+Find product of 2 matrices
+find sum of the total score of all players

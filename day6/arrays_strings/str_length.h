@@ -1,0 +1,1 @@
+int strLen(const char*);

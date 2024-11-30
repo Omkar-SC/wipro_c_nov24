@@ -1570,40 +1570,502 @@ const pointer
 dangling pointer
 wild pointer
 
-float fArray[] = {2.2f, 4.4f, 1.5f, 9.1f, 6.75f};
 
-print these:
+Normal pointer:
+A pointer pointing to an existing variable of proper data type. Thus, the pointer can be used to access the variable.
 
-fArray, fArray+1, fArray-1, fArray+2
+NULL pointer: A pointer whose value is NULL. It means, the pointer is not pointing to any variable.
 
-*fArray, *fArray+1, *fArray + *fArray
+const pointer:
+	1. Pointer to a constant address: A pointer using which we cannot modify the data of the variable to which the pointer is pointing to. However, the pointer can point to some other variable.
+	2. constant pointer: A pointer which is pointing to a variable and it can modify the data of the variable. But it cannot point to any other variable.
+	3. Pointer is both ways constant: It cannot point to any other variable nor it can modify the value of the variable to which it is pointing to.
 
-&fArray, &fArray+1, &fArray-1, &fArray+2
+dangling pointer: A pointer which is still holding address of the memory location which is de-allocated.
+The memory is de-allocated, but the pointer is still holding that address.
 
+wild pointer: 
+An un-initialized pointer is called as wild pointer.
+------------------------------------------------------------------------
+ARRAY:
+An Array was 1st introduced to bring down the number of names we have to create.
+Example, if we have to store 500 values then we need 500 variables. But handling or comprehending 500 names is too difficult.
+Hence the array was introduced where irrespective of number of values (variables) we use only one name.
+
+We use the subscript operator to create and use an Array.
+float ages[25];
+
+* Here we can store 25 values, all of type float in the array ages.
+* All the 25 values will be stored in continuous memory locations. Thus there is no gap between any 2 consecutive elements of the array.
+* The size of the array is fixed at the time of its creation and it cannot be modified later.
+* Since the size of an array is fixed, the array is an Memory in-efficient data structure.
+* Array is an data structure because all the elements of the array are arranged.
+* We call something as data structure when the data in memory is not just stored but also arranged (structured/organised) in a specific form. This specific form helps in achieving either time efficiency or space efficiency or simplicity.
+* Time taken to access any element in an array is almost same. This is because how the array is implemented. Hence Array is Time efficient DS. The time taken to access an element is also called as Look-Up and its efficiency is O(1), that is one unit time.
+* An Array is very easy to use and very commonly used where ever the size is smaller and predictable.
+* An Array is implemented using pointer and pointer arithmetic
+
+POINTER ARITHMETIC:
+Any arithmetic that involves an address is called as pointer arithmetic
+The only possible pointer arithmetic are:
+address + number 	is an address
+address - number 	is an address
+address - address	is a number (This happens with the addresses of any 2 elements of an array to know the number of elements in between these 2 addresses)
+
+int array1[10] = { 0 }; // all elements will be zero
+int array2[] = {2, 4, 5, 8, 9}; // size is taken automatically
+int array3[10] = {20, 5, 9, 11, 0, -2}; // remaining 4 elements will be zero. But this is a bad way of initializing the array.
+When we initialize an array, it is better not to mention its size.
+
+* A 2D array is actually 1D array in memory/physically
+* Name of an array is always address of the 1st element in the array.
+* Thus, name of the array + 1 will be the address of 2nd element in the array. 
+* When we apply * to name of the 1D array, then we get the value of 1st element of the array.
+* When we apply & to the name of the array, it behaves like address of the whole array. Thus, &array+1 will give the address of next 1D array
+* The index of an array starts from 0
+* The last index of an array is size-1
 
 Problems on Arrays:
 1. Find the smallest and biggest elements of the array of size N which is given by user (array is of type double)
-
-arraySize = 5
-1
-2
-3
-4
-5
-
-itr 1: 
-
-i = 0; i <= 5: i++
-arr[0] = 1
-
-s = b = 1
-
-
-
-
-2. Find the frequescy of an element of user choice in an raay of size N which is also given user (array is of type int)
+2. Find the frequesvy of an element of user choice in an raay of size N which is also given user (array is of type int)
 3. Reverse an array of size N of type float
 4. Remove duplicate elements in an array. After removal, the position of the removed elements must not be empty.
+
+-------------------------------------------------------------------------------------------------------------
+day 6
+
+&arr	Address of the 1D Array
+arr		Address of 1st element in the Array
+*arr	Value of 1st element in the 1D Array
+
+&arr+1	Address of next 1D Array of of size 6 of type double
+arr+1	Address of 2nd element in the Array
+*arr+1	Value of 1st element + 1
+
+2D ARRAY IMPLEMENTATION
+&arr	Address of the entire 2D Array
+arr		Address of 1st Row (1D Array) in the 2D Array
+*arr	Address of 1st element in the 1st Row of the 2D Array
+**arr	Value of 1st element in the 1st Row of the 2D Array
+
+&arr+1	Address of next 2D Array of size 12 elements of type float
+arr+1	Address of 2nd Row in the 2D Array
+*arr+1	Address of 2nd element in the 1st Row
+**arr+1	Value of 1st element of 1st Row + 1
+--------------------------------------------------------
+int array[]; // array of integers
+int* array[]; // array of integer pointers
+char array[]; // array of characters
+char* array[]; // array of character pointers
+
+
+RECURSIVE FUNCTION:
+A function that calls itself
+A function which is both the calling function and the called function
+
+A function when it calls itself, it repeats.
+For every function call, we know, there is a frame created in the runtime.
+Thus, call to any function in runtime creates/uses extra memory.
+Thus, a recursive call utilizes memory for the frame.
+
+Aslo, we know that the PC content should be stored in the frame as RA and then the frame is pushed on the Stack and SP is incremented, etc.
+Thus recursive call or a function call need time to do the things implicitly.
+Hence function calls should be avoided.
+
+Now, w.r.t. recursive functions, there must be some exit to the recursive calls by happening.
+Otherwise, the Call-Stack keeps growing and it will Overflow at some point of time.
+Hence a condition is always necessary in a recursive function to stop the recursive call at some point of time.
+
+When ever we can solve a problem easily using loop, it is ignorance to use recursion.
+
+PROBLEMS ON RECURSIVE FUNCTIONS:
+1. Find factorial of a number using recursion. (Bad Idea)
+2. Find sum of digits of a number
+3. Find smallest number in an array of size N
+4. Print the Fibo series of N terms (1st 2 terms are 1 and 2)
+
+---------------------------------------------------
+Find sum of 2 matrices
+Find the transpose of a matrix
+Find product of 2 matrices
+find sum of the total score of all players
+
+
+When we pass an array to a function:
+main() {
+	int arr[] = {1, 2, 5, 8, 10};
+	my_function(arr);
+}
+
+my_function(int* ptr) { }   // ptr holds address of an int
+my_function(int ptr[]) { }  // ptr holds address of an int array
+my_function(int ptr[5]) { }// ptr holds address of an int array of size 5
+--------------------------------------
+When we pass a 2D array to a function:
+main() {
+	int arr[][] = { {4, 7, 9}, {1, 2, 5} };
+	my_function(arr);
+}
+
+my_function(int** ptr) { }   // ptr here is pointer to a pointer of type int*
+my_function(int* ptr[]) { }  // ptr is a pointer to an array of int pointers
+my_function(int* ptr[5]) { }// ptr is a pointer to an array of size 5, each of which are int pointers
+my_function(int* ptr[2][11]) { }// ptr is a pointer to a 2D array of 2 rows and 11 columns
+
+
+----------------------------
+JERSY-NUMBER	RUNCS-SCORED
+----------------------------
+123				45
+ 31				99
+  7				08
+ 32				28
+777				87
+
+--------------------------------------------------------------------------------------------------------
+Strings
+
+A string is a data
+A string is made up of one or more characters
+A string can be roughly devided into 2:
+	Alphabetic
+	Alphanumeric
+
+All the characters of a string together make-up one data
+For example, "Ayodhya"
+
+This data is a place name. Thus all the 7 characters of it together is one data.
+To store one character, we need one character variable.
+Thus to store "Ayodhya" we need 7 character variables.
+
+char ch1 = 'A', ch2 = 'y', ch3 = 'o', ch4 = 'd', ch5 = 'h', ch6 = 'y', ch7 = 'a';
+
+Now, we have store one data in 7 variables.
+If we wish to send this one data to a function, then we must send 7 args.
+
+However, passing one Arg as one data is good.
+Hence We must save these 7 characters which are closely related together in one variable.
+Hence we use charcater arrays to store string data.
+
+char placeName1[] = "Ayodhya";
+Here we have stored the data as one data and not 7 data.
+Also the string data has one implicit property when it is stored as a string in an array. That is, the excape sequence (null character) '\0' is stored as "end of string" character always.
+
+char placeName2[] = {'A', 'y', 'o', 'd', 'h' 'y', 'a'};
+Here the '\0' will not be stored at the end.
+
+Thus, the sizeof placeName1 is 8 characters in memory.
+And, the sizeof placeName2 is 7 character in memory.
+
+Way to initialize a string:
+char userString1[32] = ""; // empty string
+char userString2[32] = { '\0' }; // empty string
+char userString3[] = "Ayodhya"; 
+char userString4[] = {'A', 'y', 'o', 'd', 'h' 'y', 'a', '\0'};
+
+STRING HANDLING FUNCTIONS:
+
+strlen()
+It is used to find length of a string
+Prototype:
+int strlen(const char*);
+size_t strlen(const char*);
+
+strcpy()
+It is used to copy a string into another
+Prototype:
+char* strcpy(char*, const char*);
+Usage: strcpy(destination, source);
+strcpy() returns the address of the destination string
+
+strcat()
+It is used to append/concatinate a string to other
+Prototype:
+char* strcat(char*, const char*);
+Usage: strcat(destination, source);
+strcat() returns the address of the destination string
+Note that, the source string is copied from end of the destination.
+Hence to concatinate the string, we must 1st find length of the destination string.
+
+strrev()
+It is used to reverse a string
+char* strrev(char*)
+It returns address of the o/p string which happens to be the i/p array itself
+
+strchr()
+It finds address of 1st occurance of the character in the string
+char* strchr(const char*, char)
+It returns the address of the 1st occurance of the given character in the string. If not found, it return NULL
+
+strrchr()
+It finds address of last occurance of the character in the string
+char* strrchr(const char*, char)
+It returns the address of the last occurance of the given character in the string. If not found, it return NULL
+To do this, the function starts the search from the end.
+Hence strrchr() 1st uses strlen()
+
+strcmp()
+It (case sensitive) compares two strings and returns an int value
+0 means the strings are same
+-1 means the 1st string is smaller than the 2nd
+1 meams the 2nd string is smaller than the 1st
+Note that, smaller we mean, where the difference of ASCII characters of the unmatching characters of the string
+Prototype:
+int strcmp(const char*, const char*)
+
+stricmp()
+It (case in-sensitive) compares two strings and returns an int value
+0 means the strings are same
+-1 means the 1st string is smaller than the 2nd
+1 meams the 2nd string is smaller than the 1st
+Note that, smaller we mean, where the difference of ASCII characters of the unmatching characters of the string
+Prototype:
+int stricmp(const char*, const char*)
+
+strncmp()
+It (case sensitive) compares two strings for 1st n characters only and returns an int value
+0 means the strings are same
+-1 means the 1st string is smaller than the 2nd
+1 meams the 2nd string is smaller than the 1st
+Note that, smaller we mean, where the difference of ASCII characters of the unmatching characters of the string
+Prototype:
+int strncmp(const char*, const char*, int)
+
+strstr()
+To check if a sub string is present in the given string
+It returns the address where the sub string is found, else NULL
+Prototype:
+char* strstr(const char* mainString, char* subString);
+
+strtok()
+
+
+--------------------------------------------------
+day7
+
+Programs on strings
+2D array example on strings
+function pointer
+structure (definition, array of structures, nested, padding, bit fields, pointer to a structure, function pointer inside a structure, SRS)
+Bit manupalation
+DMA (malloc, calloc)
+Dynamic Array
+Styack and Queue implementation
+Linked Lists
+-------------------------------------------------------
+
+3D String Example:
+1. Store first name and last name of the last 5 presidents of Bhaarat
+
+2D String Example:
+Accept the strings from command line as given:
+"karnataka bengaluru" "odhisa bhubaneswar" "sikkim gangtok" "tripura agartala" "goa panjim"
+
+You can take any number of strings as you wish.
+Each string is made up of state-capital pair which is seperated by space
+
+Now, create 2 2D char arrays
+states[10][32];
+capitals[10][32];
+
+Now seperate the states and capitals and store them in the given 2 arrays and print them with proper formatting.
+
+
+"goa panjim"
+Find the address of space (ADDRESS)
+Now find number of characters in the state (COUNT)
+now copy the state part of the string from args[i] to states[i]
+now copy the capital part of the string to capitals[i]
+
+addressOfSpace = strchr(args[i], ' ');
+now take int variable = address of space - address of 1st element
+count = addressOfSpace - args[i];
+strncpy(states[i], args[i], count);
+---------------------------------------------
+FUNCTION POINTER
+
+As we have pointer that points to a variable (or another pointer which is also a variable), we can also have pointer pointing to a function.
+
+A pointer of type float* can point to any variable in the function/program of type float.
+
+Thus, we know that variables have data type.
+
+And functions have prototypes.
+Thus a pointer of a specific prototype can point to any function with that particular prototype.
+----------------------------------------------------
+DYNAMIC MEMORY ALLOCATION
+
+All the variables we have declared so far in all our programs, will be created as soon as the control goes to the declartive statement.
+
+example: int num1, num2, num3;
+Here these 3 variables will be created when control goes there during runtime and nobody can stop it nor we can modify the size or data type or number of variables.
+
+Example2:
+float studentAverageScores[50];
+
+Here the programmer has defined this statement.
+Hence the programmer is assuming that there might be 50 students whose average scores need to be stored.
+
+However, it is the users/customers/client who knows the number of students.
+
+Now, if the user stores only 10 scores then 40 variables/elements of the array are wasted.
+In another case when the user wants to store 80 scores, then there will be shortage of 30 variables.
+
+So it is good if the user can decide the size of the array.
+However, the user comes into picture during runtime only.
+And during runtime, it is impossible to change/modify the program code.
+Hence we need a new way to decide the amount of memory to be allocated during runtime.
+And this mechanism is called as DYNAMIC (RUNTIME) MEMORY ALLOCATION.
+
+We know C is a procedural language and hence to achieve this, we have 3 functions available from stdlib.h
+
+malloc()
+calloc()
+realloc()
+free()
+
+
+malloc():
+It takes the number of bytes as argument and it allocates memory in Heap. And it returns the address of 1st byte.
+***Note: malloc() returns an address. This means in the code, there must a pointer to receive this address.
+The pointer is a variable.
+And all variables have their DT
+
+malloc() is used to allocate memory to store data of any DT including user defined DTs
+Hence the address which malloc returns is a GENERIC ADDRESS.
+A generic address is one whose DT is not yet ascertained.
+Thus the prototype of malloc is:
+
+void* malloc(int);
+More correctly it is,
+void* malloc(size_t);
+
+*** Note that the memory allocated in Heap area, does not carry a name. It must be accessed only via its address.
+
+*** Note that, the memory allocated in the Heap, must be deallocated using free(). The memory deallocation from Heap is not Storage class dependent.
+
+
+Implement Linear Search using Dynamic Array.
+Also discuss the efficiency of Sequential Search.
+
+Read N, the size of Array
+Create the array in Heap
+Read the N numbers of the Array
+Read the number to be searched in the Array
+Call the function linearSearch() to implement the logic
+Print the result according to the return value of the function.
+
+
+HOW TO USE malloc():
+
+Say suppose we want to store 5 float numbers. We know float is 4 bytes
+
+malloc(20)
+This allocates 20 bytes and now we can store 5 float values.
+
+However, what is some day in future, the size of float changes to 8 bytes?
+Then this code malloc(20) will fail. Because then we would need 40 bytes to store 5 float values.
+
+So, we change the code like this:
+malloc(sizeof(float) * 5);
+
+Now, this code works fine, doesn't matter what ever the size of float would be.
+However, this will always allocate memory for only and exactly 5 float values.
+Also note that, it is the programmer who is deciding how many float values to be stored.
+
+What if we need to store 10 float values in one execution and 5 in another and 20 float values in 3rd execution and so on ??
+
+Hence Read N from user and user can decide how many values he/she wish to store.
+And then call: malloc(sizeof(float) * N)
+------------------------------------------------------------
+Stack Implementation using Dynamic Array:
+
+1, 3, 4 5, 
+
+-----------------------------------------------------------
+structures
+unions
+pre processors
+Linked Lists
+Algorithms and their efficiencies
+-------------------
+Bit manipulation
+File I/O
+---------------------------------------------------------------------
+
+
+
+DAY8 Friday 29-11-2024
+
+structures:
+We know that Array is a DS where we bind data. And, the data must be of the same DT in the array.
+
+How ever in real life we must have work with data which are properties of the entity from the specific domain.
+
+For example, from the banking domain, the entity Account has following properties:
+acc_num
+acc_holder_name
+balance
+type
+phone_num
+
+Now, let us look at the DT of these properties
+acc_num				unsigned int
+acc_holder_name			char[64]
+balance				float
+type				char[32]
+phone_num			unsigned long long int
+
+here We observe that the DT of the properties are different or their sizes are different.
+But all these properties belong to the same object.
+Hence we must have to bind them (storing them together)
+
+But we cannot use an array to do this as it store values of same DT only.
+
+Thus, we have a new feature of the language:
+structure
+
+In structure we can bind the data either of different types or different sizes.
+struct is the keyword to defined a structure.
+
+struct Account {
+	unsigned int acc_num
+	char acc_holder_name[32];
+	float balance;
+	char type[16];
+	unsigned long long int phone_num;
+};
+
+The above statements together are called structure definition
+Note that, there is no memory allocation for the above definition.
+*** The definition is the information being passed by the programmer to the compiler.
+The compiler makes Book Keeping about the structure (Stores information about the structure)
+Thus structure definition is nothing but Meta Data of the structure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

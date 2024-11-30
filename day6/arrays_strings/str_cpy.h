@@ -1,0 +1,1 @@
+char* strCpy(char*, const char*);
