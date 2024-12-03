@@ -13,29 +13,38 @@ ans: An object file is a file that contains machine code or bytecode, as well as
 ans: C is not support interpreter, it is supports compiler which translates your C code into a set of machine instructions which your computer will execute directly
 
 5. What do you mean Data binding ?
-
+ans:  data binding is the process of connecting data (like information from a database or variables in your code) to elements on a user interface (like text boxes or labels) so that when the data changes, the UI automatically updates to show the new data, and sometimes, if the user changes the UI, the data updates as well.
 
 6. What is the prototype of strlen()
 ans: size_t strlen(const char*);
 
 7. What is the alternative to the -> operator ?
-ans: 
+ans: using * and then accessing the structure's members with the . (dot) operator.
+p->age = 30
+(*p).age = 30;
 
 8. Give 2 differences between Array and structure?
-ans:
+ans: 1) An array stores elements of the same data type only and  A structure can store elements of different data types.
+     2) The size of the array is determined by the number of elements and the size of each element. and in structures the total memory allocated is the sum of the sizes of all its members. Padding might be added for memory alignment.
 
 9. Give 2 similarites between Array and DS.
 ans: 
 
 10. What is efficiency of Binary Search ?
+ans: The efficiency of Binary Search is measured in terms of time complexity, which is O(log n), where n is the number of elements in the sorted list (or array) being searched.
 
 11. What is the efficiency of finding biggest element in a Array?
 ans: O(n)
 
 12. What is the efficiency of deleting a node from a LL?
+ans: If you already have a pointer to the node that needs to be deleted O(1).
+     If you don't have a pointer to the node but need to search for the node to delete O(n).
 
 13. What is a DS ?
+ans: A Data Structure (DS) is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently. Data structures are essential for managing large amounts of data and optimizing operations such as search, insertion, deletion, and updating.
+
 14. Mention any one Domain oriented Language
+ans: SQL, HTML,
 
 15. Why do we store \0 in a string ?
 ans: \0 is a null Character which is stored at the end of the string to denote its end.
@@ -45,7 +54,9 @@ ans: these are the arguments or values passed through the command line, the main
 
 17. What do we achieve using structures ?
 Space or Data Abstraction or ease of sending args to functions ?
+
 18. What are the manipulators we can apply on the DT int
+
 19. What are the manipulators we can apply on the DT float ?
 
 20. From inside a loop, where does the break and continue statements take the control to ?
@@ -113,35 +124,97 @@ ans: A frame (also called a stack frame) is a data structure that stores the inf
 	content of frame are: 
 	1) Return Address: It is the address where the program where the control should return after the current function finish the execution
 	2) Function Parameters: These are the values or references passed to the function when it is called.
-	3) Local Variables: Local variables are variables declared inside the function. These are specific to the function and can only be 	  	   accessed within that function.
-
+	3) Local Variables: Local variables are variables declared inside the function. These are specific to the function and can 	   only be accessed within that function.
+	4)
 
 39. What is a Return Address ?
+ans: Return Address refers to the memory address where control should return after a function call has been completed.
+
 40. What is the Scope of a Local Static Variable ?
+ans: The scope of a local static variable is limited to the function or block where it is declared, and its life is till the end of
+     the program
+
 41. What is the scope of a global static variable?
+ans: The scope of a global static variable is throughout the file where it is declared. and its life is throughout the program.
+ 
 42. What is the life of a local variable?
+ans: life of a local variable is limited to the function or block where it is declared. it is not visible or accessible to any other
+     program.
+
 43. What you mean by De-refrencing an address ?
+ans: Dereferencing an address refers to the process of accessing the value stored at a specific memory location or address.
+
 44. Why an address cannot be a number ?
+ans: cannot be treated as just any number because it represents a specific memory location in a system. Accessing it directly without understanding its context (such as what data it points to) can lead to errors, crashes, or incorrect behavior.
+
 45. What is Pointer Arithmetic ?
+ans: Pointer arithmetic is the ability to perform mathematical operations on pointers. It allows you to navigate through memory by adding or subtracting integer values to/from a pointer, effectively moving the pointer to different memory locations.
+
 46. How many Pointer arithmetic are there and which are they ?
+ans: There are four main types of pointer arithmetic operations:
+Addition of an integer to a pointer
+Subtraction of an integer from a pointer 
+Pointer subtraction
+Pointer comparison 
+
 47. What is Dangling Pointer ?
+ans: A dangling pointer is a pointer that continues to reference a memory location after the memory it points to has been deallocated
+
 48. What is a Wild Pointer ?
+ans: A wild pointer is a pointer that hasn't been assigned a valid memory address.
+
 49. What is NULL and what is \0
+ans: NULL is a constant that represents a pointer that does not point to any valid memory location.
+\0 is a special character used to mark the end of a string in C and C++. It is a character with the value zero (ASCII code 0).
+
 50. Is an Array memory efficient DS ?
+ans: as array needs continuous memory allocation its efficiency depends on the usage, if the exact number of elements you will need then it is efficient
+
 51. What is the efficiency of accessing an element from a 2D Array ?
+ans: The efficiency of accessing an element in a 2D array is typically O(1),
+
 52. What is the efficiency of inserting an element in between 2 elements in an Array ?
 53. How do you release the memory allocated in the Heap ?
+ans: using free()
+
 54. How many arguments does malloc() take ?
+ans: The malloc() function in C takes one argument: void* malloc(size_t size);
+
 55. Which function is used to reposition the fp in a file ?
+ans: In C, the function used to reposition the file pointer (fp) within a file is fseek()
+
 56. Which function is used to reposition the file pointer to the beggining of a file ?
+ans: To reposition the file pointer to the beginning of a file in C, you can use the rewind() function.
+
 57. Which function is used to check if fp has reached EOF ?
+ans: In C, the function used to check if a file pointer (FILE *fp) has reached the End Of File (EOF) is:
+feof()
+
 58. What is the prototype of feof()
+ans: int feof(FILE *fp);
+
 59. Which function is used to find a sub string in a string in C ?
+ans: In C, the function used to find a substring within a string is: strstr()
+      prototype:  char *strstr(const char *s1, const char *s2);
+
 60. What is the job LINKER/Linking ?
+ans: the linker (or the process of linking) plays an essential role in the compilation process. The main job of the linker is to combine one or more object files (created by the compiler) into a single executable program.
+
 61. How does the OS send ans receive all the data to and from a program/app ?
+
 62. what is type casting ?
+ans: Type casting in programming refers to the process of converting a variable from one data type to another.
+
 63. what is down cast ?
+ans: Conversion of a higher sized DT to lower sized DT (int to short int or float to int or double to float)
+
 64. what is explicit cast ?
+ans: manual casting
+
 65. What is call by value ?
+ans: Call by value is a method of passing arguments to a function in programming. When a function is called by value, the function receives a copy of the argument's value, not the original variable itself. As a result, any changes made to the parameter inside the function do not affect the original argument outside the function. 
+
 66. what is call by address ?
+ans: Call by address (also known as Call by reference using pointers) is a method of passing arguments to a function where the memory address (or reference) of the variable is passed, instead of the actual value. This means that the function works with the original data directly, and any changes made to the parameter inside the function will affect the original variable.
+
 67. Which of the following operators has highest priority?

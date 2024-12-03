@@ -165,7 +165,7 @@ string:
 Data in memory is stored in the form:
 ON OFF
 We see on and off as 1 and 0
-Now, we can make combination of 1 and 0s and make patterns
+Now, we can make combination of 1s and 0s and make patterns
 
 For example, we can say
 110011 as A
@@ -177,7 +177,7 @@ How ever if they have to work together, then same pattern is required.
 
 Problems occur when different individuals or companies are working on same project.
 
-Hence we need a STANDARD pattern which vcan be used by majority of people or companies.
+Hence we need a STANDARD pattern which can be used by majority of people or companies.
 
 Hence, the ASCII character set was introduced.
 This incluses mainly 5 parts:
@@ -233,7 +233,7 @@ Special Characters called as ESCAPE SEQUENCES:
 DATA TYPES:
 Since much of the data are similar or can be categorized, we have the following basic or primitive DTs in C, namely:
 char	1 byte		Accepts any of the ASCII characters
-int		4 bytes		4 bytes of integer number (by default int is signed int). By default int is long int
+int	4 bytes		4 bytes of integer number (by default int is signed int). By default int is long int
 double	8 bytes		Number with precision
 float	4 bytes		A small Number with precion
 Note: The precision is usually of 6 digits by default. However, we can store more accuracy.
@@ -316,10 +316,10 @@ fscanf(file, "%d %49s", &number, word) == 2		// Example
 
 FORMAT SPECIFIERS:
 %c		to print any of the 256 ASCII chars					1 byte
-%d		to print int number in decimal format				4 bytes
+%d		to print int number in decimal format					4 bytes
 %o		to print int number in octal format					4 bytes
-%x %X   to print int number in hexa-decimal format	4 or 	8 bytes
-%u		to print unsigned int number in decimal format		4 bytes
+%x %X   	to print int number in hexa-decimal format				4 or 	8 bytes
+%u		to print unsigned int number in decimal format				4 bytes
 %p		to print an address									4 bytes
 %s		to print a string (set of characters which is one data. String must end with end of string character which is \0 character)
 %f		to print float data									4 bytes

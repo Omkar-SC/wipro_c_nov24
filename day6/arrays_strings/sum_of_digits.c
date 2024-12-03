@@ -12,8 +12,8 @@ int sum_of_digit(int num)
      
 int main(int argCount, char *args[])
 {   
-    int fact = atoi(args[1]);
+    int inputNum = atoi(args[1]);
 
-    int sum = sum_of_digit(fact);
-    printf("Factorial of %d is = %d\n", fact, sum );
+    int sum = sum_of_digit(inputNum);
+    printf("Sum of digits in %d is = %d\n", inputNum, sum );
 }

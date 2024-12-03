@@ -11,6 +11,7 @@ int main() {
     while (num != 0) {
         remainder = num % 10;
         reversed = reversed * 10 + remainder;
+        // printf("%d \n", reversed);
         num /= 10;
     }
 

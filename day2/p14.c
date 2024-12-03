@@ -8,6 +8,7 @@ int main() {
     int rootNumber = 0;
     printf("Enter number to check if is perfect square: ");
     scanf("%u", &inputNumber);
+    
     rootNumber = (int)sqrt(inputNumber);
     if (rootNumber * rootNumber == inputNumber)
         printf("%u is a perfect square", inputNumber);
